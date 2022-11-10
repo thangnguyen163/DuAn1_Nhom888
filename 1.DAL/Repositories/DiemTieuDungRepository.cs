@@ -8,5 +8,7 @@ namespace _1.DAL.Repositoties
 {
     public class DiemTieuDungRepository
     {
+        //test
+        //test lan 2
     }
 }
