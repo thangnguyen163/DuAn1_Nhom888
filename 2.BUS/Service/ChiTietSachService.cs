@@ -19,7 +19,7 @@ namespace _2.BUS.Service
         {
             if (chiTietSach == null) return "Thêm chi tiết sách thất bại";
             _iChiTietSachRepository.Add(chiTietSach);
-            return "Thêm chi tiết sách thành công"
+            return "Thêm chi tiết sách thành công";
         }
 
         public string Delete(Guid? id, ChiTietSach chiTietSach)
