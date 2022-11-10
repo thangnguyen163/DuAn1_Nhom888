@@ -54,5 +54,9 @@ namespace _2.BUS.Service
             if (_iNSXRepository.UpdateNSX(obj)) return "Cập nhật thành công";
             return "Cập nhật không thành công";
         }
+        public List<Nxb> TimKiemTheoTen(string s)
+        {
+            return _iNSXRepository.TimKiemTheoTen(s);
+        }
     }
 }

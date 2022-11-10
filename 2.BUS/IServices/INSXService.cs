@@ -14,5 +14,6 @@ namespace _2.BUS.IService
         string Update(Nxb obj);
         string Delete(Nxb obj);
         List<NSXView> GetAll();
+        List<Nxb> TimKiemTheoTen(string s);
     }
 }
