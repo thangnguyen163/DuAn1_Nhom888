@@ -29,7 +29,8 @@ namespace _1.DAL.Repositoties
         {
             if(null == obj) return false;
             var temp = _context.TheLoais.FirstOrDefault(c=>c.Id==obj.Id);
-            _context.Remove(temp);
+            temp.TrangThai = 0;
+            _context.Update(temp);
             _context.SaveChanges();
             return true;
         }
