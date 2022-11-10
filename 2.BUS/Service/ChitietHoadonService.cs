@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2.BUS.Service
 {
-    public class ChitietHoadonView
+    public class ChitietHoadonService
     {
 
     }
