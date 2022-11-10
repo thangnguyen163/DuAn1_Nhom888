@@ -19,7 +19,7 @@ namespace _1.DAL.Repositoties
         }
         public bool AddTheLoai(TheLoai obj)
         {
-            if(obj == null) return false;
+            if (obj == null) return false;
             _context.TheLoais.Add(obj);
             _context.SaveChanges();
             return true;
@@ -27,8 +27,8 @@ namespace _1.DAL.Repositoties
 
         public bool DeleteTheLoai(TheLoai obj)
         {
-            if(null == obj) return false;
-            var temp = _context.TheLoais.FirstOrDefault(c=>c.Id==obj.Id);
+            if (null == obj) return false;
+            var temp = _context.TheLoais.FirstOrDefault(c => c.Id == obj.Id);
             temp.TrangThai = 0;
             _context.Update(temp);
             _context.SaveChanges();
@@ -42,10 +42,10 @@ namespace _1.DAL.Repositoties
 
         public bool UpdateTheLoai(TheLoai obj)
         {
-        //public Guid Id { get; set; }
-        //public string Ma { get; set; }
-        //public string Ten { get; set; }
-        //public int? TrangThai { get; set; }
+            //public Guid Id { get; set; }
+            //public string Ma { get; set; }
+            //public string Ten { get; set; }
+            //public int? TrangThai { get; set; }
             if (null == obj) return false;
             var temp = _context.TheLoais.FirstOrDefault(c => c.Id == obj.Id);
             temp.Ma = obj.Ma;

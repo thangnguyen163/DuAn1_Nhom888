@@ -42,12 +42,12 @@ namespace _1.DAL.Repositoties
 
         public bool UpdateCTTheLoai(ChiTietTheLoai obj)
         {
-        //public Guid Id { get; set; }
-        //public Guid? IdTheLoai { get; set; }
-        //public Guid? IdChiTietSach { get; set; }
-        //public string Ma { get; set; }
-        //public string Ten { get; set; }
-        //public int? TrangThai { get; set; }
+            //public Guid Id { get; set; }
+            //public Guid? IdTheLoai { get; set; }
+            //public Guid? IdChiTietSach { get; set; }
+            //public string Ma { get; set; }
+            //public string Ten { get; set; }
+            //public int? TrangThai { get; set; }
             if (obj == null) return false;
             var tempobj = _context.ChiTietTheLoais.FirstOrDefault(c => c.Id == obj.Id);
             tempobj.IdTheLoai = obj.IdTheLoai;

@@ -16,7 +16,7 @@ namespace _1.DAL.Repositoties
         public ChucVuRepository()
         {
             _DBcontext = new FpolyDBContext();
-            _lstChucVu = new List<ChucVu>();    
+            _lstChucVu = new List<ChucVu>();
         }
 
         public bool addChucVu(ChucVu chucVu)
