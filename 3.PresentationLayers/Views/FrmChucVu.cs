@@ -38,7 +38,7 @@ namespace _3.PresentationLayers.Views
             var lstChucVu = _chucVuService.getChucVusFromDB();
             foreach (var item in lstChucVu)
             {
-                dtg_Show.Rows.Add(item.Id, item.Ma, item.Ten, item.TrangThai );
+                dtg_Show.Rows.Add(item.Id, item.Ma, item.Ten, item.TrangThai == 1 ? "Hoạt Động" : "Không Hoạt Động" );
             }
         }
         public void resetForm()
@@ -47,7 +47,8 @@ namespace _3.PresentationLayers.Views
             _cv = null;
             tb_ma.Text = "";
             tb_ten.Text = "";
-            tb_trangthai.Text = "";
+            cb_hd.Checked = true;
+            cb_khd.Checked = false;
 
         }
         private void label1_Click(object sender, EventArgs e)
@@ -63,7 +64,8 @@ namespace _3.PresentationLayers.Views
                 _cv = _chucVuService.getChucVusFromDB().FirstOrDefault(x => x.Id == Guid.Parse(r.Cells[0].Value.ToString()));
                 tb_ma.Text = r.Cells[1].Value.ToString();   
                 tb_ten.Text = r.Cells[2].Value.ToString();
-                tb_trangthai.Text = r.Cells[2].Value.ToString();
+                cb_hd.Checked = _cv.TrangThai == 1;
+                cb_khd.Checked = _cv.TrangThai == 0;
 
             }
         }
@@ -105,6 +107,7 @@ namespace _3.PresentationLayers.Views
                 {
                     _cv.Ma = tb_ma.Text;
                     _cv.Ten = tb_ten.Text;
+                    _cv.TrangThai = cb_hd.Checked ? 1 : 0;
                     _chucVuService.updateChucVu(_cv);
                     MessageBox.Show("Sửa chức vụ thành công");
                     resetForm();
@@ -134,12 +137,36 @@ namespace _3.PresentationLayers.Views
                 {
                 Id = new Guid(),
                 Ma = tb_ma.Text,
-                Ten = tb_ten.Text
+                Ten = tb_ten.Text,
+                TrangThai = cb_hd.Checked ? 1 : 0
                 };
                 _chucVuService.addChucVu(cv);
                 MessageBox.Show("Thêm mới thành công");
                 resetForm();
             }
+        }
+
+        private void cb_hd_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_hd_Click(object sender, EventArgs e)
+        {
+            if (cb_khd.Checked)
+            {
+                cb_khd.Checked = false;
+            }
+            cb_hd.Checked = true;
+        }
+
+        private void cb_khd_Click(object sender, EventArgs e)
+        {
+            if (cb_hd.Checked)
+            {
+                cb_hd.Checked=false;
+            }
+            cb_khd.Checked = true;
         }
     }
 }
