@@ -14,9 +14,13 @@ namespace _2.BUS.Service
     public class ChiTietTheLoaiService : IChiTietTheLoaiService
     {
         IChiTietTheLoaiRepository _ichiTietTheLoaiRepository;
+        IChiTietSachRepository _ichiTietSachRepository;
+        ITheLoaiRepository _iTheLoaiRepository;
         public ChiTietTheLoaiService()
         {
             _ichiTietTheLoaiRepository = new ChiTietTheLoaiRepository();
+            _ichiTietSachRepository = new ChiTietSachRepository();
+            _iTheLoaiRepository = new TheLoaiRepository();
         }
         public string Add(ChiTietTheLoai obj)
         {
@@ -34,7 +38,21 @@ namespace _2.BUS.Service
 
         public List<ChiTietTheLoaiView> GetAll()
         {
-            throw new NotImplementedException();
+            List<ChiTietTheLoaiView> lstcttlv = new List<ChiTietTheLoaiView>();
+            lstcttlv =
+                (from a in _ichiTietTheLoaiRepository.GetAllCTTheLoai()
+                 join b in _ichiTietSachRepository.GetAll() on a.IdChiTietSach equals b.Id
+                 join c in _iTheLoaiRepository.GetAllTheLoai() on a.IdTheLoai equals c.Id
+                 select new ChiTietTheLoaiView()
+                 {
+                     Id = a.Id,
+                     IdTheLoai = c.Id,
+                     IdChiTietSach = b.Id,
+                     Ma = a.Ma,
+                     Ten = a.Ten,
+                     TrangThai = a.TrangThai,
+                 }).ToList();
+            return lstcttlv;
         }
 
         public string Update(ChiTietTheLoai obj)
