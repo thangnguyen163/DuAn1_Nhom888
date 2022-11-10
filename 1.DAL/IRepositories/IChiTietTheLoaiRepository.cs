@@ -13,5 +13,6 @@ namespace _1.DAL.IRepositoties
         bool UpdateCTTheLoai(ChiTietTheLoai obj);
         bool DeleteCTTheLoai(ChiTietTheLoai obj);
         List<ChiTietTheLoai> GetAllCTTheLoai();
+
     }
 }

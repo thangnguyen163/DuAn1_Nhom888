@@ -1,4 +1,4 @@
-﻿//using _1.DAL.DomainClass;
+﻿using _1.DAL.DomainClass;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +9,9 @@ namespace _1.DAL.IRepositoties
 {
     public interface IHoaDonRepository
     {
-        //bool AddHoadon(HoaDon obj);
-        //bool UpdateHoadon(HoaDon obj);
-        //bool DeleteHoadon(HoaDon obj);
-        //List<HoaDon> GetAllHoaDon();
+        bool AddHoadon(HoaDon obj);
+        bool UpdateHoadon(HoaDon obj);
+        bool DeleteHoadon(HoaDon obj);
+        List<HoaDon> GetAllHoaDon();
     }
 }
