@@ -40,6 +40,10 @@ namespace _1.DAL.Repositoties
             return _context.Nxbs.ToList();
         }
 
+        public List<Nxb> TimKiemTheoTen(string ten)
+        {
+            return _context.Nxbs.Where(c => c.Ten.ToLower().Contains(ten.ToLower())).ToList();
+        }
         public bool UpdateNSX(Nxb obj)
         {
             //public Guid Id { get; set; }
