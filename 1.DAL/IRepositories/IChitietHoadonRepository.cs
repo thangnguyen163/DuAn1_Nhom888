@@ -10,7 +10,7 @@ namespace _1.DAL.IRepositoties
     {
         // test vs dmmmmmmmm
         // téttttttttt
-        // khoong duoc thi di ngu naysadsadsads
+        // khoong duoc thi di ngu naysadsadsadshh
         //asdssddfsdfdfds
     }
 }
