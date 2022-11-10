@@ -24,7 +24,8 @@ namespace _2.BUS.Service
 
         public string Delete(Guid? id, ChiTietSach chiTietSach)
         {
-            throw new NotImplementedException();
+            _iChiTietSachRepository.Delete(id, chiTietSach);
+            return "Chi tiết sách đã được chuyển thành không sử dụng";
         }
 
         public List<ChiTietSach> GetAll()
@@ -39,7 +40,8 @@ namespace _2.BUS.Service
 
         public string Update(Guid? id, ChiTietSach chiTietSach)
         {
-            throw new NotImplementedException();
+            _iChiTietSachRepository.Update(id, chiTietSach);
+            return "Chi tiết sách được sửa thành công";
         }
     }
 }

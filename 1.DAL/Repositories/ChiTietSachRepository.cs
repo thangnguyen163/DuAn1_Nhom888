@@ -30,7 +30,7 @@ namespace _1.DAL.Repositoties
         {
             if (chiTietSach == null) return false;
             var a = _dbContext.ChiTietSaches.FirstOrDefault(c => c.Id == id);
-            a.TrangThai = chiTietSach.TrangThai;
+            a.TrangThai = 0;
             _dbContext.Update(a);
             _dbContext.SaveChanges();
             return true;
@@ -47,10 +47,10 @@ namespace _1.DAL.Repositoties
             var a = _dbContext.ChiTietSaches.FirstOrDefault(c => c.Id == id);
             a.IdSach = chiTietSach.IdSach;
             a.IdNxb = chiTietSach.IdNxb;
-            a.Ma=chiTietSach.Ma;
             a.IdTacGia = chiTietSach.IdTacGia;
             a.IdNhaPhatHanh = chiTietSach.IdNhaPhatHanh;
             a.IdLoaiBia = chiTietSach.IdLoaiBia;
+            a.Ma = chiTietSach.Ma;
             a.Anh = chiTietSach.Anh;
             a.MaVach = chiTietSach.MaVach;
             a.KichThuoc = chiTietSach.KichThuoc;
