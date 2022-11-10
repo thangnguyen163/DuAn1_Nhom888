@@ -12,6 +12,6 @@ namespace _2.BUS.IService
         bool addChucVu(ChucVu chucVu);
         bool updateChucVu(ChucVu chucVu);
         bool deleteChucVu(ChucVu chucVu);
-        List<ChucVu> getChucVusFromDB(); 
+        List<ChucVu> getChucVusFromDB();
     }
 }

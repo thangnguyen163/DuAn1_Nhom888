@@ -35,7 +35,7 @@ namespace _2.BUS.Service
 
         public List<NSXView> GetAll()
         {
-            List<NSXView> lstnxbv = new List<NSXView> ();
+            List<NSXView> lstnxbv = new List<NSXView>();
             lstnxbv =
                 (from a in _iNSXRepository.GetAllNSX()
                  select new NSXView

@@ -15,7 +15,7 @@ namespace _2.BUS.Service
         private IChucVuRepository _IchucVuRepository;
         private List<ChucVu> _lstChucVu;
 
-        public ChucVuServivce() 
+        public ChucVuServivce()
         {
             _IchucVuRepository = new ChucVuRepository();
             _lstChucVu = new List<ChucVu>();
@@ -40,7 +40,7 @@ namespace _2.BUS.Service
 
         public bool updateChucVu(ChucVu chucVu)
         {
-            _IchucVuRepository  .updateChucVu(chucVu);
+            _IchucVuRepository.updateChucVu(chucVu);
             return true;
         }
     }

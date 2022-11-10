@@ -38,7 +38,7 @@ namespace _3.PresentationLayers.Views
             var lstChucVu = _chucVuService.getChucVusFromDB();
             foreach (var item in lstChucVu)
             {
-                dtg_Show.Rows.Add(item.Id, item.Ma, item.Ten, item.TrangThai );
+                dtg_Show.Rows.Add(item.Id, item.Ma, item.Ten, item.TrangThai);
             }
         }
         public void resetForm()
@@ -57,11 +57,11 @@ namespace _3.PresentationLayers.Views
 
         private void dtg_Show_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) 
+            if (e.RowIndex >= 0)
             {
                 DataGridViewRow r = dtg_Show.Rows[e.RowIndex];
                 _cv = _chucVuService.getChucVusFromDB().FirstOrDefault(x => x.Id == Guid.Parse(r.Cells[0].Value.ToString()));
-                tb_ma.Text = r.Cells[1].Value.ToString();   
+                tb_ma.Text = r.Cells[1].Value.ToString();
                 tb_ten.Text = r.Cells[2].Value.ToString();
                 tb_trangthai.Text = r.Cells[2].Value.ToString();
 
@@ -84,17 +84,17 @@ namespace _3.PresentationLayers.Views
                 _chucVuService.deleteChucVu(_cv);
                 MessageBox.Show("Xóa Thành Công");
                 resetForm();
-            } 
-                
+            }
+
         }
 
         private void btn_Sua_Click(object sender, EventArgs e)
         {
-            if(tb_ma.Text == "")
+            if (tb_ma.Text == "")
             {
                 MessageBox.Show("Nhập Mã Chức Vụ");
 
-            }    
+            }
             else if (_cv == null)
             {
                 MessageBox.Show("Chọn Chức Vụ");
@@ -114,16 +114,16 @@ namespace _3.PresentationLayers.Views
                 {
                     MessageBox.Show("Chức vụ đã tồn tại");
                 }
-            } 
-                
+            }
+
         }
 
         private void btn_Them_Click(object sender, EventArgs e)
         {
-            if(tb_ma.Text == "")
+            if (tb_ma.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập mã chức vụ");
-            }    
+            }
             else if (_chucVuService.getChucVusFromDB().Any(x => x.Ma == tb_ma.Text))
             {
                 MessageBox.Show("Mã chức vụ đã tồn tại");
@@ -132,9 +132,9 @@ namespace _3.PresentationLayers.Views
             {
                 var cv = new ChucVu()
                 {
-                Id = new Guid(),
-                Ma = tb_ma.Text,
-                Ten = tb_ten.Text
+                    Id = new Guid(),
+                    Ma = tb_ma.Text,
+                    Ten = tb_ten.Text
                 };
                 _chucVuService.addChucVu(cv);
                 MessageBox.Show("Thêm mới thành công");
