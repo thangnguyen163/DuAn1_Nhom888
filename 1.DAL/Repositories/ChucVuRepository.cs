@@ -18,7 +18,7 @@ namespace _1.DAL.Repositoties
             _DBcontext = new FpolyDBContext();
             _lstChucVu = new List<ChucVu>();
         }
-
+        int a;
         public bool addChucVu(ChucVu chucVu)
         {
             _DBcontext.ChucVus.Add(chucVu);
